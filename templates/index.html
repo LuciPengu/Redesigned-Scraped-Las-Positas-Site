@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Fall 2022 Las Positas CS Courses</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+  <div class="header">
+    <h1>Fall 2022 Las Positas CS Courses (AUG 17 - DEC 20)</h1>
+  </div> 
+  {% for data in data %}
+    <div class="subject">
+      <h2>{{data.Title}} ({{data.Subj}}{{data.Crse}})</h2>
+
+      <p>
+        Instructor: {{data.Instructor}}<br>
+        CRN: <h>{{data.CRN}}</h><br>
+        Campus: {{data.Campus}}<br>
+        Units: <h>{{data.Units}}</h><br>
+        Section: {{data.Sec}}<br>
+        <div class="schedule">
+          {% for day in data.Schedule %}
+            <div class="day">
+              <hr>
+              Days: {{day.Days}}<br>
+              Time: {{day.Times}}<br>
+              Building: <g><h>{{day.Bldg}}</g>, Room: <g><h>{{day.Room}}</g><br>
+            </div>
+          {% endfor %}
+        </div>
+      </p>
+
+      <a href="https://hypixel.net/attachments/gnomed-png.1794650/">Link To Textbook</a>
+    </div>
+  {% endfor %}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #2F3136;
+      color: white;
+      font-size: 1rem;
+    }
+
+    a{
+      color: #9B84EE;
+    }
+
+    hr{
+      color: white;
+    }
+
+    .header{
+      text-align: center;
+      background-color: #9B84EE;
+      padding: 1rem;
+    }
+
+    .subject{
+      padding: 1.5rem;
+      margin: 1rem;
+      background-color: #36393F;
+    }
+
+    p{
+      margin: 1rem;
+    }
+
+    .day{
+      margin: 1rem;
+    }
+
+    h{
+      color: #44DD8F;
+    }
+  </style>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
